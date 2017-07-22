@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/btnSquaredBreathing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:text="@string/btn_squared_breathing"
+        android:onClick="startSquaredBreathingFragment"/>
+
+    <TextView
+        android:id="@+id/btnFocusedBreathing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:text="@string/btn_focused_breathing"
+        android:onClick="startFocusedBreathingFragment"/>
+
+
+    <TextView
+        android:id="@+id/btnSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:text="@string/btn_setting"
+        android:onClick="startSettingFragment"/>
+
+
+    <TextView
+        android:id="@+id/btnScoreboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/btn_scoreboard"
+        android:textSize="40sp"
+        android:onClick="startScoreboardFragment"/>
+
+</LinearLayout>

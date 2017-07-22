@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.replicatecountdowntimer.SquaredBreathing.SquaredBreathingTimer">
+
+
+    <include layout="@layout/content_squared_breathing_timer" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etTotalDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/please_enter_the_total_seconds"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/btnStart"
+            android:onClick="startTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:background="@android:color/holo_blue_light"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvShowState"
+            android:text="State"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvShowProgress"
+            android:text="Time Passed"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            />
+
+        <TextView
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Menu"
+            />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
