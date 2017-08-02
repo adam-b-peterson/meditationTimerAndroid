@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.android.replicatecountdowntimer.SquaredBreathing.SquaredBreathingTimer"
-    tools:showIn="@layout/activity_squared_breathing_timer">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
 

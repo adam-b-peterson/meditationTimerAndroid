@@ -1,4 +1,4 @@
-package com.example.android.replicatecountdowntimer.SquaredBreathing;
+package com.example.android.replicatecountdowntimer.FocusedBreathing;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.android.replicatecountdowntimer.MainActivity;
 import com.example.android.replicatecountdowntimer.R;
 
-public class SquaredBreathingTimer extends AppCompatActivity {
+public class FocusedBreathingTimerActivity extends AppCompatActivity {
     public Handler handler;
     private TextView tvShowProgress;
     private TextView tvShowState;
@@ -30,7 +30,7 @@ public class SquaredBreathingTimer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_squared_breathing_timer);
+        setContentView(R.layout.activity_focused_breathing_timer);
 
         Bundle bundle = getIntent().getExtras();
         totalDuration = bundle.getInt("totalDuration");
@@ -90,14 +90,12 @@ public class SquaredBreathingTimer extends AppCompatActivity {
                     Log.v("Timer","State = "+state);
                     if (state == 1) {
                         stateText = "Inhale Gently";
-                    } else if (state == 3) {
+                    } else if (state == 2) {
                         stateText = "Exhale Gently";
-                    } else {
-                        stateText = "Hold The Breath";
                     }
                     tvShowState.setText(stateText);
                 }
-                if (state == 4) {
+                if (state == 2) {
                     state = 0;
                 }
                 progress++;

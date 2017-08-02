@@ -1,4 +1,4 @@
-package com.example.android.replicatecountdowntimer.SquaredBreathing;
+package com.example.android.replicatecountdowntimer.FocusedBreathing;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.widget.NumberPicker;
 
 import com.example.android.replicatecountdowntimer.R;
 
-public class SquaredBreathingSettingActivity extends AppCompatActivity {
+
+public class FocusedBreathingSettingActivity extends AppCompatActivity {
     private NumberPicker npTotalDuration;
     private NumberPicker npPartLength;
     private CheckBox cbShowTimePassed;
@@ -19,7 +20,7 @@ public class SquaredBreathingSettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sqaured_breathing_setting);
+        setContentView(R.layout.activity_focused_breathing_setting);
         npTotalDuration = (NumberPicker)findViewById(R.id.npTotalDuration);
         npPartLength = (NumberPicker)findViewById(R.id.npLength);
         cbShowTimePassed = (CheckBox)findViewById(R.id.cbShowTimePassed);
@@ -39,7 +40,7 @@ public class SquaredBreathingSettingActivity extends AppCompatActivity {
 
 
     public void startSquaredBreathingTimer(View view) {
-        Intent intent = new Intent(SquaredBreathingSettingActivity.this, SquaredBreathingTimer.class);
+        Intent intent = new Intent(FocusedBreathingSettingActivity.this, FocusedBreathingTimerActivity.class);
         int totalDuration = npTotalDuration.getValue();
         intent.putExtra("totalDuration",totalDuration);
         int partLength = npPartLength.getValue();

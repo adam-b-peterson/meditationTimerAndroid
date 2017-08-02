@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,39 +17,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Fragment.MainPageFragment"
-            android:label="@string/title_activity_main_page_fragment"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".FocusedBreathing.FocusedBreathingSetupActivity"
-            android:label="@string/title_activity_focused_breathing_setup"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".FocusedBreathing.FocusedBreathingSettingActivity"
+            android:label="@string/title_activity_focused_breathing_setup">
         </activity>
         <activity
             android:name=".SquaredBreathing.SquaredBreathingTimer"
-            android:label="@string/title_activity_squared_breathing_timer"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_squared_breathing_timer">
         </activity>
         <activity
             android:name=".SquaredBreathing.SquaredBreathingSettingActivity"
-            android:label="@string/title_activity_sqaured_breathing_setting"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_sqaured_breathing_setting">
         </activity>
+        <activity android:name=".Setting.SettingActivity" />
+        <activity android:name=".Scoreboard.ScoreboardActivity" />
+        <activity android:name=".FocusedBreathing.FocusedBreathingTimerActivity"></activity>
     </application>
 
 </manifest>
