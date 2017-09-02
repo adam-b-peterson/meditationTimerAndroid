@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     >
 
 
@@ -17,11 +16,12 @@
 
         <TextView
             android:id="@+id/tvShowState"
-            android:layout_centerInParent="true"
+            android:layout_below="@+id/tvShowTimeLeft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="40sp"
+            android:textColor="#000000"
             />
 
         <TextView
@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:text="Time Passed:"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
+            android:textColor="#000000"
             />
 
         <TextView
@@ -39,7 +40,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvShowProgress"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
+            android:textColor="#000000"
             />
 
         <TextView
@@ -49,7 +51,8 @@
             android:layout_height="wrap_content"
             android:text="Time Left:"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
+            android:textColor="#000000"
             />
 
         <TextView
@@ -58,7 +61,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvShowTimeLeft"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
+            android:textColor="#000000"
             />
 
         <TextView
@@ -69,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Menu"
-            android:textSize="20dp"
+            android:textSize="10dp"
             android:background="@android:color/holo_blue_light"
             android:textColor="@android:color/white"
             android:padding="10dp"
@@ -77,6 +81,17 @@
             android:onClick="backToMenu"
             />
 
+        <ImageView
+            android:id="@+id/bg_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_circle"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
     </RelativeLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

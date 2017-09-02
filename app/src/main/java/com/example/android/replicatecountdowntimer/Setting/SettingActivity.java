@@ -1,11 +1,11 @@
 package com.example.android.replicatecountdowntimer.Setting;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.android.replicatecountdowntimer.BaseActivity;
 import com.example.android.replicatecountdowntimer.R;
 
-public class SettingActivity extends AppCompatActivity {
+public class SettingActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

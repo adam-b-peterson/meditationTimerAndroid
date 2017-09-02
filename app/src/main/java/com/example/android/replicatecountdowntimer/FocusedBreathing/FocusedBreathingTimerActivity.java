@@ -1,17 +1,22 @@
 package com.example.android.replicatecountdowntimer.FocusedBreathing;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android.replicatecountdowntimer.BaseActivity;
 import com.example.android.replicatecountdowntimer.MainActivity;
 import com.example.android.replicatecountdowntimer.R;
 
-public class FocusedBreathingTimerActivity extends AppCompatActivity {
+public class FocusedBreathingTimerActivity extends BaseActivity {
     public Handler handler;
     private TextView tvShowProgress;
     private TextView tvShowState;
@@ -26,12 +31,15 @@ public class FocusedBreathingTimerActivity extends AppCompatActivity {
     String timeLeft;
     boolean ShowTimePassed;
     boolean ShowTimeLeft;
+    ImageView bg_circle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_focused_breathing_timer);
 
+        //retrieve values from previous activity
         Bundle bundle = getIntent().getExtras();
         totalDuration = bundle.getInt("totalDuration");
         partLength = bundle.getInt("partLength");
@@ -39,6 +47,7 @@ public class FocusedBreathingTimerActivity extends AppCompatActivity {
         ShowTimeLeft = bundle.getBoolean("ShowTimeLeft");
 
         tvShowProgress = (TextView) findViewById(R.id.tvShowProgress);
+        bg_circle = (ImageView) findViewById(R.id.bg_circle);
 
         startTimer();
 
@@ -52,67 +61,110 @@ public class FocusedBreathingTimerActivity extends AppCompatActivity {
 
         tvShowState = (TextView) findViewById(R.id.tvShowState);
         tvShowTimeLeft = (TextView) findViewById(R.id.tvShowTimeLeft);
-        if (!ShowTimePassed){
-            TextView tvTimePassedText = (TextView)findViewById(R.id.tvTimePassedText);
+        if (!ShowTimePassed) {
+            TextView tvTimePassedText = (TextView) findViewById(R.id.tvTimePassedText);
             tvTimePassedText.setVisibility(View.GONE);
             tvShowProgress.setVisibility(View.GONE);
         }
-        if (!ShowTimeLeft){
-            TextView tvTimeLeftText = (TextView)findViewById(R.id.tvTimeLeftText);
+        if (!ShowTimeLeft) {
+            TextView tvTimeLeftText = (TextView) findViewById(R.id.tvTimeLeftText);
             tvTimeLeftText.setVisibility(View.GONE);
             tvShowTimeLeft.setVisibility(View.GONE);
         }
 
+        tvShowState.setVisibility(View.INVISIBLE);
+        bg_circle.setVisibility(View.VISIBLE);
+        bg_circle.setScaleX(0);
+        bg_circle.setScaleY(0);
 
         final Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                if (progress<60) {
+                if (progress < 60) {
                     timePassed = String.format("%02d", progress % 60);
-                } else if (progress<3600){
+                } else if (progress < 3600) {
                     timePassed = String.format("%02d:%02d", progress / 60, progress % 60);
                 } else {
-                    timePassed = String.format("%02d:%02d:%02d", progress/3600, progress / 60, progress % 60);
+                    timePassed = String.format("%02d:%02d:%02d", progress / 3600, progress / 60, progress % 60);
                 }
                 tvShowProgress.setText(timePassed);
-                secLeft = totalDuration*60 - progress;
-                if (secLeft<60) {
+                secLeft = totalDuration * 60 - progress;
+                if (secLeft < 60) {
                     timeLeft = String.format("%02d", secLeft % 60);
-                } else if (secLeft<3600){
+                } else if (secLeft < 3600) {
                     timeLeft = String.format("%02d:%02d", secLeft / 60, secLeft % 60);
                 } else {
-                    timeLeft = String.format("%02d:%02d:%02d", secLeft /3600, secLeft / 60, secLeft % 60);
+                    timeLeft = String.format("%02d:%02d:%02d", secLeft / 3600, secLeft / 60, secLeft % 60);
                 }
                 tvShowTimeLeft.setText(timeLeft);
 
-                if (progress % partLength == 1){
+
+                if (progress % partLength == 1) {
                     state++;
-                    Log.v("Timer","State = "+state);
+                    Log.v("Timer", "State = " + state);
                     if (state == 1) {
                         stateText = "Inhale Gently";
+
+                        bg_circle.setScaleX(0);
+                        bg_circle.setScaleY(0);
+
+                        ObjectAnimator animateCircleXenlarge = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 0, 1);
+                        ObjectAnimator animateCircleYenlarge = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 0, 1);
+                        AnimatorSet animateCircleEnlarge = new AnimatorSet();
+                        animateCircleEnlarge.playTogether(animateCircleXenlarge, animateCircleYenlarge);
+                        animateCircleEnlarge.setDuration(partLength * 1000);
+//                        animateCircleEnlarge.setInterpolator(new DecelerateInterpolator());
+                        animateCircleEnlarge.start();
+
                     } else if (state == 2) {
                         stateText = "Exhale Gently";
-                    }
-                    tvShowState.setText(stateText);
-                }
-                if (state == 2) {
-                    state = 0;
-                }
-                progress++;
 
-                if (progress <= totalDuration*60) {
-                    handler.postDelayed(this, 1000);
-                } else {
-                    tvShowState.setText("Congratulations!\nYou've accomplished your current practice!");
-                    tvShowProgress.setText("");
+                        bg_circle.setScaleX(1);
+                        bg_circle.setScaleY(1);
+
+                        ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 1, 0);
+                        ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 1, 0);
+                        AnimatorSet animateCircle = new AnimatorSet();
+                        animateCircle.playTogether(animateCircleX, animateCircleY);
+                        animateCircle.setDuration(partLength * 1000);
+                        animateCircle.start();
+
+
+                        tvShowState.setText(stateText);
+                    }
+                    if (state == 2) {
+                        state = 0;
+                    }
+                    progress++;
+
+
+//                !!! changed for fast feedback
+//                if (progress <= totalDuration*60) {
+                    if (progress <= totalDuration * 1) {
+                        handler.postDelayed(this, 1000);
+                    } else {
+                        tvShowState.setVisibility(View.VISIBLE);
+                        bg_circle.setVisibility(View.GONE);
+                        SharedPreferences sharedPreferences = getSharedPreferences("record", Context.MODE_PRIVATE);
+                        String recordTotalPracticeDuration = sharedPreferences.getString("recordTotalPracticeDuration", "");
+                        int temTimeAdd = Integer.parseInt(recordTotalPracticeDuration) + totalDuration;
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("recordTotalPracticeDuration", Integer.toString(temTimeAdd));
+                        editor.apply();
+                        String temText = "Congratulations!\nYou've accomplished your current practice!\nTotal Practical Duration: " + Integer.toString(temTimeAdd);
+                        tvShowState.setText(temText);
+                    }
                 }
             }
+
         };
-        handler.postDelayed(runnable, 1000);
-    }
+        handler.postDelayed(runnable,1000);
+        }
 
     public void backToMenu(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
+
+
 }

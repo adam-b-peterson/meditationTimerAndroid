@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.android.replicatecountdowntimer">
+    package="com.example.android.replicatecountdowntimer">
 
     <application
         android:allowBackup="true"
@@ -10,30 +10,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:name=".BaseActivity">
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".FocusedBreathing.FocusedBreathingSettingActivity"
-            android:label="@string/title_activity_focused_breathing_setup"/>
-        <activity
-            android:name=".FocusedBreathing.FocusedBreathingTimerActivity"
-            android:label="@string/title_activity_focused_breathing_timer"/>
-
+            android:label="@string/title_activity_focused_breathing_setup">
+        </activity>
         <activity
             android:name=".SquaredBreathing.SquaredBreathingTimer"
-            android:label="@string/title_activity_squared_breathing_timer"/>
+            android:label="@string/title_activity_squared_breathing_timer">
+        </activity>
         <activity
             android:name=".SquaredBreathing.SquaredBreathingSettingActivity"
-            android:label="@string/title_activity_sqaured_breathing_setting"/>
+            android:label="@string/title_activity_sqaured_breathing_setting">
+        </activity>
+        <activity android:name=".Setting.SettingActivity" />
+        <activity android:name=".Scoreboard.ScoreboardActivity" />
+        <activity android:name=".FocusedBreathing.FocusedBreathingTimerActivity">
 
-        <activity android:name=".Setting.SettingActivity"/>
-        <activity android:name=".Scoreboard.ScoreboardActivity"/>
+        </activity>
     </application>
 
 </manifest>

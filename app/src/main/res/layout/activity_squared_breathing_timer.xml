@@ -17,11 +17,11 @@
 
         <TextView
             android:id="@+id/tvShowState"
-            android:layout_centerInParent="true"
+            android:layout_above="@+id/btnMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="40sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Time Passed:"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvShowProgress"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Time Left:"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvShowTimeLeft"
             android:textAlignment="center"
-            android:textSize="32sp"
+            android:textSize="20sp"
             />
 
         <TextView
@@ -69,13 +69,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Menu"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:background="@android:color/holo_blue_light"
             android:textColor="@android:color/white"
             android:padding="10dp"
             android:layout_margin="10dp"
             android:onClick="backToMenu"
             />
+
+        <ImageView
+            android:id="@+id/bg_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_circle"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
 
     </RelativeLayout>
 

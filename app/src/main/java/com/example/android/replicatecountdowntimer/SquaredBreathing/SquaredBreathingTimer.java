@@ -1,17 +1,21 @@
 package com.example.android.replicatecountdowntimer.SquaredBreathing;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android.replicatecountdowntimer.BaseActivity;
 import com.example.android.replicatecountdowntimer.MainActivity;
 import com.example.android.replicatecountdowntimer.R;
 
-public class SquaredBreathingTimer extends AppCompatActivity {
+public class SquaredBreathingTimer extends BaseActivity {
     public Handler handler;
     private TextView tvShowProgress;
     private TextView tvShowState;
@@ -26,11 +30,13 @@ public class SquaredBreathingTimer extends AppCompatActivity {
     String timeLeft;
     boolean ShowTimePassed;
     boolean ShowTimeLeft;
+    ImageView bg_circle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_squared_breathing_timer);
+// a       setupWindowAnimations();
 
         Bundle bundle = getIntent().getExtras();
         totalDuration = bundle.getInt("totalDuration");
@@ -39,8 +45,9 @@ public class SquaredBreathingTimer extends AppCompatActivity {
         ShowTimeLeft = bundle.getBoolean("ShowTimeLeft");
 
         tvShowProgress = (TextView) findViewById(R.id.tvShowProgress);
+        bg_circle = (ImageView) findViewById(R.id.bg_circle);
 
-        startTimer();
+                startTimer();
 
     }
 
@@ -61,6 +68,16 @@ public class SquaredBreathingTimer extends AppCompatActivity {
             TextView tvTimeLeftText = (TextView)findViewById(R.id.tvTimeLeftText);
             tvTimeLeftText.setVisibility(View.GONE);
             tvShowTimeLeft.setVisibility(View.GONE);
+
+
+            bg_circle.setScaleX(0);
+            bg_circle.setScaleY(0);
+//
+//            ObjectAnimator AnimateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 0, 1);
+//            ObjectAnimator AnimateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 0, 1);
+//            AnimatorSet AnimateCircle = new AnimatorSet();
+//            AnimateCircle.playTogether(AnimateCircleX, AnimateCircleY);
+//            AnimateCircle.start();
         }
 
 
@@ -90,8 +107,32 @@ public class SquaredBreathingTimer extends AppCompatActivity {
                     Log.v("Timer","State = "+state);
                     if (state == 1) {
                         stateText = "Inhale Gently";
+                        bg_circle.setScaleX(0.3f);
+                        bg_circle.setScaleY(0.3f);
+
+                        ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 0.3f, 1);
+                        ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 0.3f, 1);
+                        AnimatorSet animateCircle = new AnimatorSet();
+                        animateCircle.playTogether(animateCircleX, animateCircleY);
+                        animateCircle.setDuration(partLength * 1000);
+//                        animateCircle.setInterpolator(new DecelerateInterpolator());
+                        animateCircle.start();
+
+
                     } else if (state == 3) {
                         stateText = "Exhale Gently";
+
+                        bg_circle.setScaleX(1);
+                        bg_circle.setScaleY(1);
+
+                        ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 1, 0.3f);
+                        ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 1, 0.3f);
+                        AnimatorSet animateCircle = new AnimatorSet();
+                        animateCircle.playTogether(animateCircleX, animateCircleY);
+                        animateCircle.setDuration(partLength * 1000);
+//                        animateCircle.setInterpolator(new DecelerateInterpolator());
+                        animateCircle.start();
+
                     } else {
                         stateText = "Hold The Breath";
                     }
@@ -102,11 +143,24 @@ public class SquaredBreathingTimer extends AppCompatActivity {
                 }
                 progress++;
 
-                if (progress <= totalDuration*60) {
+
+
+
+//                !!! changed for fast feedback
+//                if (progress <= totalDuration*60) {
+                if (progress <= totalDuration*1) {
                     handler.postDelayed(this, 1000);
                 } else {
-                    tvShowState.setText("Congratulations!\nYou've accomplished your current practice!");
-                    tvShowProgress.setText("");
+                    bg_circle.setVisibility(View.GONE);
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("record", MODE_PRIVATE);
+                    String recordTotalPracticeDuration = sharedPreferences.getString("recordTotalPracticeDuration", "");
+                    int temTimeAdd = Integer.parseInt(recordTotalPracticeDuration) + totalDuration;
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("recordTotalPracticeDuration", Integer.toString(temTimeAdd));
+                    editor.apply();
+                    String temText = "Congratulations!\nYou've accomplished your current practice!\nTotal Practical Duration: " + Integer.toString(temTimeAdd);
+                    tvShowState.setText(temText);
                 }
             }
         };
@@ -117,4 +171,15 @@ public class SquaredBreathingTimer extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
+
+// a   Ask Wingy about this
+//    private void setupWindowAnimations() {
+//        Fade fade = new Fade();
+//        fade.setDuration(1000);
+//        getWindow().setEnterTransition(fade);
+//
+//        Explode explode = new Explode();
+//        explode.setDuration(1000);
+//        getWindow().setExitTransition(explode);
+// a\   }
 }

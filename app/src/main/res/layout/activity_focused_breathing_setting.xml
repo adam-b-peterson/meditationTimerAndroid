@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Practice duration (minutes):"
-        android:textSize="20dp"
+        android:textSize="10dp"
         android:textAlignment="center"
         />
     <NumberPicker
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Length of each part (seconds):"
-        android:textSize="20dp"
+        android:textSize="10dp"
         android:textAlignment="center"
         />
     <NumberPicker

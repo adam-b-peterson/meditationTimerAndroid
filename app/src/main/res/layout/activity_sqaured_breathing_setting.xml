@@ -12,42 +12,186 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Practice duration (minutes):"
+        android:padding="10dp"
+        android:text="Duration (mins):"
         android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
         />
-    <NumberPicker
-        android:id="@+id/npTotalDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        >
-    </NumberPicker>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Length of each part (seconds):"
-        android:textSize="20dp"
+        android:id="@+id/tvHintOfDuration"
+        android:text="Please choose between 1-600 minutes"
+        android:textColor="@android:color/transparent"
         android:textAlignment="center"
         />
-    <NumberPicker
-        android:id="@+id/npLength"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
         >
-    </NumberPicker>
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnDuration3mins"
+            android:text="3"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnDuration5mins"
+            android:text="5"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnDuration10mins"
+            android:text="10"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnDuration20mins"
+            android:text="20"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnDuration30mins"
+            android:text="30"
+            />
+
+        <!--<TextView-->
+        <!--android:id="@+id/btnDurationCustom"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:text="..."-->
+        <!--android:textSize="20dp"-->
+        <!--android:gravity="center"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--/>-->
+
+        <!--<EditText-->
+            <!--style="@style/BtnSquare"-->
+            <!--android:id="@+id/btnDurationCustom"-->
+            <!--android:text="..."-->
+            <!--android:inputType="number"-->
+            <!--/>-->
+
+        <EditText
+            android:id="@+id/etDurationCurrent"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:background="@drawable/edit_text_background"
+            android:layout_marginRight="10dp"
+            android:inputType="number"
+            android:cursorVisible="true"
+            android:maxLength="3"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Inhale/ Exhale Length (seconds):"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHintOfLength"
+        android:text="Please choose between 4-15 seconds"
+        android:textColor="@android:color/transparent"
+        android:textAlignment="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnLength4secs"
+            android:text="4"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnLength5secs"
+            android:text="5"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnLength6secs"
+            android:text="6"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnLength7secs"
+            android:text="7"
+            />
+
+        <com.example.android.replicatecountdowntimer.All.SquareTextView
+            style="@style/BtnSquare"
+            android:id="@+id/btnLength8secs"
+            android:text="8"
+            />
+
+        <!--<com.example.android.replicatecountdowntimer.All.SquareTextView-->
+            <!--style="@style/BtnSquare"-->
+            <!--android:id="@+id/btnLengthCustom"-->
+            <!--android:text="..."-->
+            <!--/>-->
+
+        <EditText
+            android:id="@+id/etLengthCurrent"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/edit_text_background"
+            android:cursorVisible="true"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:maxLength="2"
+            />
+
+    </LinearLayout>
 
     <CheckBox
         android:id="@+id/cbShowTimePassed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="Show Time Passed"
         android:layout_marginLeft="100dp"
         />
 
     <CheckBox
+        android:padding="10dp"
+
         android:id="@+id/cbShowTimeLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,12 +204,13 @@
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:background="#f4bc42"
+        android:textColor="#000000"
         android:text="Start"
         android:textStyle="bold"
         android:textAllCaps="true"
         android:layout_gravity="center"
-        android:padding="10dp"
         android:onClick="startSquaredBreathingTimer"/>
 
 </LinearLayout>

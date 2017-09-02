@@ -2,15 +2,17 @@ package com.example.android.replicatecountdowntimer.FocusedBreathing;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.NumberPicker;
 
+import com.example.android.replicatecountdowntimer.BaseActivity;
 import com.example.android.replicatecountdowntimer.R;
 
 
-public class FocusedBreathingSettingActivity extends AppCompatActivity {
+public class FocusedBreathingSettingActivity extends BaseActivity {
     private NumberPicker npTotalDuration;
     private NumberPicker npPartLength;
     private CheckBox cbShowTimePassed;
@@ -21,6 +23,9 @@ public class FocusedBreathingSettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_focused_breathing_setting);
+//        setupWindowAnimations();
+
+        //BindViews
         npTotalDuration = (NumberPicker)findViewById(R.id.npTotalDuration);
         npPartLength = (NumberPicker)findViewById(R.id.npLength);
         cbShowTimePassed = (CheckBox)findViewById(R.id.cbShowTimePassed);
@@ -40,7 +45,9 @@ public class FocusedBreathingSettingActivity extends AppCompatActivity {
 
 
     public void startSquaredBreathingTimer(View view) {
+        //jump from setting to timer
         Intent intent = new Intent(FocusedBreathingSettingActivity.this, FocusedBreathingTimerActivity.class);
+        //bundle settings with intent
         int totalDuration = npTotalDuration.getValue();
         intent.putExtra("totalDuration",totalDuration);
         int partLength = npPartLength.getValue();
@@ -50,5 +57,15 @@ public class FocusedBreathingSettingActivity extends AppCompatActivity {
         boolean ShowTimeLeft = cbShowTimeLeft.isChecked();
         intent.putExtra("ShowTimeLeft", ShowTimeLeft);
         startActivity(intent);
+    }
+
+    private void setupWindowAnimations() {
+        Fade fade = new Fade();
+        fade.setDuration(1000);
+        getWindow().setEnterTransition(fade);
+
+        Explode explode = new Explode();
+        explode.setDuration(1000);
+        getWindow().setExitTransition(explode);
     }
 }
