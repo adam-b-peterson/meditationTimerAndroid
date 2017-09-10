@@ -1,4 +1,4 @@
-package com.example.android.replicatecountdowntimer.FocusedBreathing;
+package com.example.android.replicatecountdowntimer.DeepBreathing;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
