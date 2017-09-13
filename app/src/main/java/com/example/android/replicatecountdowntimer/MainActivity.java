@@ -7,14 +7,14 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
-import com.example.android.replicatecountdowntimer.FocusedBreathing.FocusedBreathingSettingActivity;
 import com.example.android.replicatecountdowntimer.Scoreboard.ScoreboardActivity;
 import com.example.android.replicatecountdowntimer.Setting.SettingActivity;
 import com.example.android.replicatecountdowntimer.SquaredBreathing.SquaredBreathingSettingActivity;
 
-import static com.example.android.replicatecountdowntimer.R.id.btnFocusedBreathing;
+import static com.example.android.replicatecountdowntimer.R.id.btnDeepBreathing;
+import static com.example.android.replicatecountdowntimer.R.id.btnInstruction;
 import static com.example.android.replicatecountdowntimer.R.id.btnScoreboard;
 import static com.example.android.replicatecountdowntimer.R.id.btnSetting;
 import static com.example.android.replicatecountdowntimer.R.id.btnSquaredBreathing;
@@ -28,15 +28,17 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 //        setupWindowAnimations();
 
-        TextView btnSquaredBreathing = (TextView) findViewById(R.id.btnSquaredBreathing);
-        TextView btnFocusedBreathing = (TextView) findViewById(R.id.btnFocusedBreathing);
-        TextView btnSetting = (TextView) findViewById(R.id.btnSetting);
-        TextView btnScoreboard = (TextView) findViewById(R.id.btnScoreboard);
+        LinearLayout btnSquaredBreathing = (LinearLayout) findViewById(R.id.btnSquaredBreathing);
+        LinearLayout btnDeepBreathing = (LinearLayout) findViewById(R.id.btnDeepBreathing);
+        LinearLayout btnSetting = (LinearLayout) findViewById(R.id.btnSetting);
+        LinearLayout btnScoreboard = (LinearLayout) findViewById(R.id.btnScoreboard);
+        LinearLayout btnInstruction = (LinearLayout) findViewById(R.id.btnInstruction);
 
         btnSquaredBreathing.setOnClickListener(menuOnClickListener);
-        btnFocusedBreathing.setOnClickListener(menuOnClickListener);
+        btnDeepBreathing.setOnClickListener(menuOnClickListener);
         btnSetting.setOnClickListener(menuOnClickListener);
         btnScoreboard.setOnClickListener(menuOnClickListener);
+        btnInstruction.setOnClickListener(menuOnClickListener);
 
     }
 
@@ -52,16 +54,19 @@ public class MainActivity extends BaseActivity {
                 case btnSquaredBreathing:
 
                     intent = new Intent(MainActivity.this, SquaredBreathingSettingActivity.class);
-                    startActivity(intent);
-//                    setAlphaAnimation(R.layout.activity_main);
-//                      overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
-                    break;
-                case btnFocusedBreathing:
-
-                    intent = new Intent(MainActivity.this, FocusedBreathingSettingActivity.class);
+                    intent.putExtra("condition", "square");
                     startActivity(intent);
 
+                    //                    setAlphaAnimation(R.layout.activity_main);
+                    //                      overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                     break;
+                case btnDeepBreathing:
+
+                    intent = new Intent(MainActivity.this, SquaredBreathingSettingActivity.class);
+                    intent.putExtra("condition", "deep");
+                    startActivity(intent);
+                    break;
+
                 case btnSetting:
 
                     intent = new Intent(MainActivity.this, SettingActivity.class);
@@ -71,6 +76,11 @@ public class MainActivity extends BaseActivity {
                 case btnScoreboard:
 
                     intent = new Intent(MainActivity.this, ScoreboardActivity.class);
+                    startActivity(intent);
+
+                    break;
+                case btnInstruction:
+                    intent = new Intent(MainActivity.this, InstructionActivity.class);
                     startActivity(intent);
 
                     break;

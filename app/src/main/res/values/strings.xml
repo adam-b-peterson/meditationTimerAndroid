@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">ReplicateCountDownTimer</string>
+    <string name="app_name">Breath Practice</string>
     <string name="title_activity_main_page_fragment">MainPageFragment</string>
     <string name="action_settings">Settings</string>
 
     <string name="btn_squared_breathing">Squared Breathing</string>
-    <string name="btn_focused_breathing">Focused Breathing</string>
+    <string name="btn_deep_breathing">Deep Breathing</string>
     <string name="btn_setting">Setting</string>
     <string name="btn_scoreboard">Scoreboard</string>
     <string name="title_activity_focused_breathing_setup">FocusedBreathingSetupActivity</string>

@@ -46,13 +46,13 @@
             app:cardPreventCornerOverlap="false"
             android:layout_weight="1">
             <TextView
-                android:id="@+id/btnFocusedBreathing"
+                android:id="@+id/btnDeepBreathing"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
                 android:textSize="@dimen/text_size_24dp"
                 android:gravity="center"
-                android:text="@string/btn_focused_breathing"
+                android:text="@string/btn_deep_breathing"
                 android:layout_weight="1"
                 android:background="#2196f3"
                 android:textColor="#FFFFFF"

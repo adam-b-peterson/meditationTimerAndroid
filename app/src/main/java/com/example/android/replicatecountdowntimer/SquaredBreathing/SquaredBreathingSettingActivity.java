@@ -36,11 +36,17 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
     private  TextView btnStartSquaredBreathing;
     private EditText etDurationCurrent;
     private EditText etLengthCurrent;
+    private String condition;
+    private TextView tvDescriptionOfLength;
+    int maxTotalLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqaured_breathing_setting);
+
+        tvDescriptionOfLength = (TextView)findViewById(R.id.tvDescriptionOfLength);
+
         npTotalDuration = (NumberPicker)findViewById(R.id.npTotalDuration);
         npPartLength = (NumberPicker)findViewById(R.id.npLength);
         cbShowTimePassed = (CheckBox)findViewById(R.id.cbShowTimePassed);
@@ -131,13 +137,13 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(TextUtils.isEmpty(s)) {
-                    tvHintOfDuration.setBackgroundColor(Color.RED);
-                    tvHintOfDuration.setTextColor(Color.WHITE);
+                    tvHintOfLength.setBackgroundColor(Color.RED);
+                    tvHintOfLength.setTextColor(Color.WHITE);
                     btnStartSquaredBreathing.setVisibility(View.INVISIBLE);
                     return;
                 } else {
                     int intTotalLength = Integer.parseInt(s.toString());
-                    if ((intTotalLength >= 4) && (intTotalLength <= 15)) {
+                    if ((intTotalLength >= 4) && (intTotalLength <= maxTotalLength)) {
                         tvHintOfLength.setBackgroundColor(Color.TRANSPARENT);
                         tvHintOfLength.setTextColor(Color.TRANSPARENT);
                         btnStartSquaredBreathing.setVisibility(View.VISIBLE);
@@ -152,6 +158,23 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
 
         cbShowTimePassed.setChecked(false);
         cbShowTimeLeft.setChecked(false);
+
+
+//        Bundle bundle = getIntent().getExtras();
+//        condition = bundle.getChar("condition");
+        condition= getIntent().getStringExtra("condition");
+//        Log.d("condition", "condition = " + condition);
+
+        if (condition.equals("square")) {
+            tvDescriptionOfLength.setText("Length of Square: (4-15 seconds)");
+            tvHintOfLength.setText("Please choose between 4-15 seconds");
+            maxTotalLength = 15;
+        } else if (condition.equals("deep")) {
+            tvDescriptionOfLength.setText("Length of Exhale: (4-30 seconds)");
+            tvHintOfLength.setText("Please choose between 4-30 seconds");
+            maxTotalLength = 30;
+        }
+
     }
 
     private View.OnClickListener onClickListenerChangeSettings = new View.OnClickListener() {
@@ -212,6 +235,7 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
         intent.putExtra("ShowTimePassed", ShowTimePassed);
         boolean ShowTimeLeft = cbShowTimeLeft.isChecked();
         intent.putExtra("ShowTimeLeft", ShowTimeLeft);
+        intent.putExtra("condition", condition);
         startActivity(intent);
     }
 }

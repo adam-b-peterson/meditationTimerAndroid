@@ -1,5 +1,6 @@
 package com.example.android.replicatecountdowntimer.SquaredBreathing;
 
+import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
@@ -31,6 +32,7 @@ public class SquaredBreathingTimer extends BaseActivity {
     boolean ShowTimePassed;
     boolean ShowTimeLeft;
     ImageView bg_circle;
+    String condition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,11 @@ public class SquaredBreathingTimer extends BaseActivity {
 
         tvShowProgress = (TextView) findViewById(R.id.tvShowProgress);
         bg_circle = (ImageView) findViewById(R.id.bg_circle);
+
+        condition= bundle.getString("condition");
+        Log.d("condition", "condition = " + condition);
+
+
 
                 startTimer();
 
@@ -102,53 +109,109 @@ public class SquaredBreathingTimer extends BaseActivity {
                 }
                 tvShowTimeLeft.setText(timeLeft);
 
-                if (progress % partLength == 1){
-                    state++;
-                    Log.v("Timer","State = "+state);
-                    if (state == 1) {
-                        stateText = "Inhale Gently";
-                        bg_circle.setScaleX(0.3f);
-                        bg_circle.setScaleY(0.3f);
+                if (condition.equals("deep")) {
+                    if (progress % (4 + partLength)==1) {
 
-                        ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 0.3f, 1);
-                        ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 0.3f, 1);
-                        AnimatorSet animateCircle = new AnimatorSet();
-                        animateCircle.playTogether(animateCircleX, animateCircleY);
-                        animateCircle.setDuration(partLength * 1000);
+
+
+
+                            ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 0.3f, 1);
+                            ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 0.3f, 1);
+                            final AnimatorSet animateCircle = new AnimatorSet();
+                            animateCircle.playTogether(animateCircleX, animateCircleY);
+                            animateCircle.setDuration(4 * 1000);
+
+                            ObjectAnimator animateCircle2X = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 1, 0.3f);
+                            ObjectAnimator animateCircle2Y = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 1, 0.3f);
+                            final AnimatorSet animateCircle2 = new AnimatorSet();
+                            animateCircle2.playTogether(animateCircle2X, animateCircle2Y);
+                            animateCircle2.setDuration(partLength * 1000);
+
+                        animateCircle.addListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animator) {
+                                stateText = "Inhale Gently";
+                                tvShowState.setText(stateText);
+                                bg_circle.setScaleX(0.3f);
+                                bg_circle.setScaleY(0.3f);
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animator) {
+                                stateText = "Exhale Gently";
+                                tvShowState.setText(stateText);
+
+                                bg_circle.setScaleX(1);
+                                bg_circle.setScaleY(1);
+
+                                animateCircle2.start();
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animator) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animator) {
+
+                            }
+                        });
+                            animateCircle.start();
+
+
+
+
+                        }
+                } else if (condition.equals("square")) {
+                    if (progress % partLength == 1) {
+                        state++;
+                        Log.v("Timer", "State = " + state);
+                        if (state == 1) {
+                            stateText = "Inhale Gently";
+                            bg_circle.setScaleX(0.3f);
+                            bg_circle.setScaleY(0.3f);
+
+                            ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 0.3f, 1);
+                            ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 0.3f, 1);
+                            AnimatorSet animateCircle = new AnimatorSet();
+                            animateCircle.playTogether(animateCircleX, animateCircleY);
+                            animateCircle.setDuration(partLength * 1000);
 //                        animateCircle.setInterpolator(new DecelerateInterpolator());
-                        animateCircle.start();
+                            animateCircle.start();
 
 
-                    } else if (state == 3) {
-                        stateText = "Exhale Gently";
+                        } else if (state == 3) {
+                            stateText = "Exhale Gently";
 
-                        bg_circle.setScaleX(1);
-                        bg_circle.setScaleY(1);
+                            bg_circle.setScaleX(1);
+                            bg_circle.setScaleY(1);
 
-                        ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 1, 0.3f);
-                        ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 1, 0.3f);
-                        AnimatorSet animateCircle = new AnimatorSet();
-                        animateCircle.playTogether(animateCircleX, animateCircleY);
-                        animateCircle.setDuration(partLength * 1000);
+                            ObjectAnimator animateCircleX = ObjectAnimator.ofFloat(bg_circle, "ScaleX", 1, 0.3f);
+                            ObjectAnimator animateCircleY = ObjectAnimator.ofFloat(bg_circle, "ScaleY", 1, 0.3f);
+                            AnimatorSet animateCircle = new AnimatorSet();
+                            animateCircle.playTogether(animateCircleX, animateCircleY);
+                            animateCircle.setDuration(partLength * 1000);
 //                        animateCircle.setInterpolator(new DecelerateInterpolator());
-                        animateCircle.start();
+                            animateCircle.start();
 
-                    } else {
-                        stateText = "Hold The Breath";
+                        } else {
+                            stateText = "Hold The Breath";
+                        }
+                        tvShowState.setText(stateText);
                     }
-                    tvShowState.setText(stateText);
-                }
-                if (state == 4) {
-                    state = 0;
+                    if (state == 4) {
+                        state = 0;
+                    }
                 }
                 progress++;
 
 
 
 
-//                !!! changed for fast feedback
-//                if (progress <= totalDuration*60) {
-                if (progress <= totalDuration*1) {
+//                !!! changed  to 1 when fast feedback while testing
+                if (progress <= totalDuration*60) {
+//                if (progress <= totalDuration*1) {
                     handler.postDelayed(this, 1000);
                 } else {
                     bg_circle.setVisibility(View.GONE);

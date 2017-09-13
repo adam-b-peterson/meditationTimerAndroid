@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.replicatecountdowntimer.Setting.SettingActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Coming Soon!"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimary"
+        />
+
 </android.support.constraint.ConstraintLayout>
