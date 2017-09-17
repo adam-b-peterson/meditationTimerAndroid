@@ -192,11 +192,28 @@
 
     <CheckBox
         android:padding="10dp"
-
         android:id="@+id/cbShowTimeLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show Time Left"
+        android:layout_marginLeft="100dp"
+        />
+
+    <CheckBox
+        android:padding="10dp"
+        android:id="@+id/cbShowInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Instructions"
+        android:layout_marginLeft="100dp"
+        />
+
+    <CheckBox
+        android:padding="10dp"
+        android:id="@+id/cbCheckVibrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vibrate"
         android:layout_marginLeft="100dp"
         />
 

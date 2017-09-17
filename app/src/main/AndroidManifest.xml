@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.replicatecountdowntimer">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_lotus"
@@ -18,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SquaredBreathing.SquaredBreathingTimer"
+            android:name=".SquaredBreathing.SquaredBreathingTimerActivity"
             android:label="@string/title_activity_squared_breathing_timer"></activity>
         <activity
             android:name=".SquaredBreathing.SquaredBreathingSettingActivity"

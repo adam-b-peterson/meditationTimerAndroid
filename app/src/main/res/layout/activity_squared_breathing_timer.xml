@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.replicatecountdowntimer.SquaredBreathing.SquaredBreathingTimer">
+    tools:context="com.example.android.replicatecountdowntimer.SquaredBreathing.SquaredBreathingTimerActivity">
 
 
     <include layout="@layout/content_squared_breathing_timer" />
@@ -16,12 +16,16 @@
         >
 
         <TextView
-            android:id="@+id/tvShowState"
-            android:layout_above="@+id/btnMenu"
+            android:id="@+id/tvShowInstructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#FFFFFF"
+            android:translationZ="1px"
+            android:text="FFFF"
             />
 
         <TextView
@@ -61,21 +65,6 @@
             android:textSize="20sp"
             />
 
-        <TextView
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/btnMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Menu"
-            android:textSize="15dp"
-            android:background="@android:color/holo_blue_light"
-            android:textColor="@android:color/white"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:onClick="backToMenu"
-            />
 
         <ImageView
             android:id="@+id/bg_circle"

@@ -15,4 +15,20 @@ public class BaseActivity extends AppCompatActivity {
 
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
+
+    public static boolean isVisible = true;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setVisible(true);
+        isVisible = true;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        setVisible(false);
+        isVisible = false;
+    }
 }
