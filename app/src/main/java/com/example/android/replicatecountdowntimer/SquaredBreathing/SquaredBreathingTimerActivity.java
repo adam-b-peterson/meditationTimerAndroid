@@ -3,15 +3,18 @@ package com.example.android.replicatecountdowntimer.SquaredBreathing;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.replicatecountdowntimer.BaseActivity;
+import com.example.android.replicatecountdowntimer.MainActivity;
 import com.example.android.replicatecountdowntimer.R;
 import android.os.Vibrator;
 
@@ -115,7 +118,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
         }
 
         if (!ShowInstructions) {
-            tvShowInstructions.setVisibility(View.GONE);
+            tvShowInstructions.setVisibility(View.INVISIBLE);
         }
 
         bg_circle.setScaleX(0);
@@ -244,20 +247,29 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
 
 
 //                !!! changed  to 1 when fast feedback while testing
-                if (progress <= totalDuration * 60) {
-//                if (progress <= totalDuration*1) {
+//                if (progress <= totalDuration * 60) {
+                if (progress <= totalDuration*1) {
                     handler.postDelayed(this, 1000);
                 } else {
+                    handler.removeCallbacks(runnable);
                     bg_circle.setVisibility(View.GONE);
 
                     SharedPreferences sharedPreferences = getSharedPreferences("record", MODE_PRIVATE);
                     String recordTotalPracticeDuration = sharedPreferences.getString("recordTotalPracticeDuration", "");
-                    int temTimeAdd = Integer.parseInt(recordTotalPracticeDuration) + totalDuration;
+                    int temTimeAdd = 0;
+                    try{
+                        temTimeAdd = Integer.parseInt(recordTotalPracticeDuration) + totalDuration;
+                        Log.d("TemTimeAdd", String.valueOf(temTimeAdd));
+                    }catch(NumberFormatException ex){ // handle your exception
+                    }
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("recordTotalPracticeDuration", Integer.toString(temTimeAdd));
                     editor.apply();
                     String temText = "Congratulations!\nYou've accomplished your current practice!\nTotal Practical Duration: " + Integer.toString(temTimeAdd);
+                    tvShowInstructions.setVisibility(View.VISIBLE);
                     tvShowInstructions.setText(temText);
+                    Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                    startActivity(intent);
                 }
             }
         };

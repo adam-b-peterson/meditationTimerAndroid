@@ -90,35 +90,5 @@ public class MainActivity extends BaseActivity {
         }
     };
 
-//    private void setupWindowAnimations() {
-//        Fade fade = new Fade();
-//        fade.setDuration(3000);
-//        getWindow().setEnterTransition(fade);
-//
-//        Explode explode = new Explode();
-//        explode.setDuration(3000);
-//        getWindow().setExitTransition(explode);
-//    }
-
-    public static void setAlphaAnimation(View v) {
-        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(v, "alpha",  1f, .3f);
-        fadeOut.setDuration(2000);
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(v, "alpha", .3f, 1f);
-        fadeIn.setDuration(2000);
-
-        final AnimatorSet mAnimationSet = new AnimatorSet();
-
-        mAnimationSet.play(fadeIn).after(fadeOut);
-
-        mAnimationSet.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                mAnimationSet.start();
-            }
-        });
-        mAnimationSet.start();
-    }
-
 }
 
