@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -93,7 +92,8 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
     }
 
     private void vibrateReminder() {
-        if ((isVisible) && (CheckVibrate)) {
+//        if ((isVisible) && (CheckVibrate)) {
+        if (CheckVibrate) {
             vibrator.vibrate(500);
         }
     }
@@ -164,7 +164,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
                         animateCircleDeepIn.addListener(new Animator.AnimatorListener() {
                             @Override
                             public void onAnimationStart(Animator animator) {
-                                stateText = "In";
+                                stateText = getString(R.string.Deep_In);
                                 vibrateReminder();
                                 tvShowInstructions.setText(stateText);
 
@@ -174,7 +174,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
 
                             @Override
                             public void onAnimationEnd(Animator animator) {
-                                stateText = "Out";
+                                stateText = getString(R.string.Deep_Out);
                                 vibrateReminder();
                                 tvShowInstructions.setText(stateText);
 
@@ -203,7 +203,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
                         state++;
                         Log.v("Timer", "State = " + state);
                         if (state == 1) {
-                            stateText = "In";
+                            stateText = getString(R.string.instruction_inhale);
                             vibrateReminder();
 
                             bg_circle.setScaleX(0.3f);
@@ -219,7 +219,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
 
 
                         } else if (state == 3) {
-                            stateText = "Out";
+                            stateText = getString(R.string.instruction_exhale);
                             vibrateReminder();
 
                             bg_circle.setScaleX(1);
@@ -234,7 +234,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
                             animateCircleSquareOut.start();
 
                         } else {
-                            stateText = "Hold";
+                            stateText = getString(R.string.instruction_hold);
                             vibrateReminder();
                         }
                         tvShowInstructions.setText(stateText);
@@ -265,7 +265,7 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("recordTotalPracticeDuration", Integer.toString(temTimeAdd));
                     editor.apply();
-                    String temText = "Congratulations!\nYou've accomplished your current practice!\nTotal Practical Duration: " + Integer.toString(temTimeAdd);
+                    String temText = getString(R.string.finish_text) + Integer.toString(temTimeAdd);
                     tvShowInstructions.setVisibility(View.VISIBLE);
                     tvShowInstructions.setText(temText);
                     Intent intent = new Intent(getBaseContext(), MainActivity.class);

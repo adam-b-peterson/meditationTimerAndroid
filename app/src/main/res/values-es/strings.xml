@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="instructions">Instrucciones</string>
+    <string name="instructions_content">Las prácticas respiratorias son útiles prácticas formales en la meditación consciente. Mindfulness meditación mejorar la conciencia emocional, sentido de la paz y vivir nuestras vidas aquí y ahora.</string>
+    <string name="credits">Crédito</string>
+    <string name="credits_content">cono realizado por https://smashicons.com/, http://swifticons.com/, http://www.freepik.com/ from www.flaticon.com</string>
+    <string name="squared_breathing_icon">icono cuadrado de respiración</string>
+    <string name="description_of_length_deep">Length of Exhale: (4-30 seconds)</string>
+    <string name="hint_of_length_deep">Por favor, elija entre 4-30 segundos</string>
+    <string name="instruction_inhale">Inhalar</string>
+    <string name="instructions_credits">Instrucciones / Créditos</string>
+    <string name="setting_text">¡Próximamente!</string>
+    <string name="squared_breathing_duration_hint">Por favor, elija entre 1-600 minutos</string>
+    <string name="squared_breathing_inhale_exhale_length_seconds">Longitud Inhalar / Exhalar (segundos):</string>
+    <string name="squared_breathing_length_hint">Por favor, elija entre 4-15 segundos</string>
+    <string name="cb_show_time_passed">Mostrar el tiempo pasado</string>
+    <string name="cb_show_time_left">Mostrar tiempo restante</string>
+    <string name="cb_show_instructions">Mostrar instrucciones</string>
+    <string name="cb_vibrate">Vibrate</string>
+    <string name="squared_breathing_start">Comienzo</string>
+    <string name="timer_time_left">Tiempo restante:</string>
+    <string name="title_activity_main_page_fragment">Fragmento de la página principal</string>
+    <string name="finish_text">¡Felicitaciones! ¡Has logrado tu práctica actual! Duración práctica total:</string>
+    <string name="instruction_exhale">Exhalar</string>
+    <string name="instruction_hold">Mantener</string>
+    <string name="timer_time_passed">Tiempo transcurrido:</string>
+    <string name="app_name">Clam su mente</string>
+    <string name="btn_squared_breathing">Respiración cuadrada</string>
+    <string name="title_activity_squared_breathing_timer">Contador de tiempo cuadrado de respiración</string>
+    <string name="title_activity_sqaured_breathing_setting">Ajuste de la respiración cuadrada</string>
+    <string name="description_of_length_square">Longitud de la Plaza: (4-15 segundos)</string>
+    <string name="btn_deep_breathing">Respiración profunda</string>
+    <string name="squared_breathing_duration_mins">Duración (min):</string>
+    <string name="total_practice_duration">Duración total de la práctica:</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="btn_setting">Ajustes</string>
+    <string name="hint_of_length_square">Por favor, elija entre 4-15 segundos</string>
+    <string name="btn_scoreboard">Progreso</string>
+    <string name="scoreboard_text">Vibrar</string>
+    <string name="Deep_In">Inhalar</string>
+    <string name="Deep_Out">Exhalar</string>
+</resources>

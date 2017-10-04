@@ -1,15 +1,41 @@
 <resources>
-    <string name="app_name">Breath Practice</string>
+    <string name="app_name">Clam your mind</string>
     <string name="title_activity_main_page_fragment">MainPageFragment</string>
     <string name="action_settings">Settings</string>
-
     <string name="btn_squared_breathing">Squared Breathing</string>
     <string name="btn_deep_breathing">Deep Breathing</string>
     <string name="btn_setting">Setting</string>
-    <string name="btn_scoreboard">Scoreboard</string>
-    <string name="title_activity_focused_breathing_setup">FocusedBreathingSetupActivity</string>
-    <string name="title_activity_focused_breathing_timer">FocusedBreathingTimer</string>
+    <string name="btn_scoreboard">Progress</string>
     <string name="title_activity_squared_breathing_timer">SquaredBreathingTimer</string>
-    <string name="please_enter_the_total_seconds">Please enter the total seconds</string>
     <string name="title_activity_sqaured_breathing_setting">SqauredBreathingSettingActivity</string>
+    <string name="instructions">Instructions</string>
+    <string name="instructions_content">Breathing practices are helpful formal practices in mindfulness meditation. Mindfulness meditation enhance emotional awareness, sense of peacefulness and live our lives in here and now.</string>
+    <string name="credits">Credits</string>
+    <string name="credits_content">Icon made by https://smashicons.com/, http://swifticons.com/, http://www.freepik.com/ from www.flaticon.com</string>
+    <string name="squared_breathing_icon">squared breathing icon</string>
+    <string name="description_of_length_square">Length of Square: (4-15 seconds)</string>
+    <string name="hint_of_length_square">Please choose between 4-15 seconds</string>
+    <string name="description_of_length_deep">Length of Exhale: (4-30 seconds)</string>
+    <string name="hint_of_length_deep">Please choose between 4-30 seconds</string>
+    <string name="finish_text">Congratulations! You\'ve accomplished your current practice! Total Practical Duration:</string>
+    <string name="instruction_inhale">In</string>
+    <string name="instruction_exhale">Out</string>
+    <string name="instruction_hold">Hold</string>
+    <string name="instructions_credits">Instructions/ Credits</string>
+    <string name="total_practice_duration">Total Practice Duration:</string>
+    <string name="scoreboard_text">Extra Features coming soon!</string>
+    <string name="setting_text">Coming Soon!</string>
+    <string name="squared_breathing_duration_mins">Duration (mins):</string>
+    <string name="squared_breathing_duration_hint">Please choose between 1-600 minutes</string>
+    <string name="squared_breathing_inhale_exhale_length_seconds">Inhale/ Exhale Length (seconds):</string>
+    <string name="squared_breathing_length_hint">Please choose between 4-15 seconds</string>
+    <string name="cb_show_time_passed">Show Time Passed</string>
+    <string name="cb_show_time_left">Show Time Left</string>
+    <string name="cb_show_instructions">Show Instructions</string>
+    <string name="cb_vibrate">Vibrate</string>
+    <string name="squared_breathing_start">Start</string>
+    <string name="timer_time_passed">Time Passed:</string>
+    <string name="timer_time_left">Time Left:</string>
+    <string name="Deep_In">In</string>
+    <string name="Deep_Out">Out</string>
 </resources>

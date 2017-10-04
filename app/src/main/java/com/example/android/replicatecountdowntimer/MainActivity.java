@@ -1,11 +1,8 @@
 package com.example.android.replicatecountdowntimer;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -31,14 +28,16 @@ public class MainActivity extends BaseActivity {
         LinearLayout btnSquaredBreathing = (LinearLayout) findViewById(R.id.btnSquaredBreathing);
         LinearLayout btnDeepBreathing = (LinearLayout) findViewById(R.id.btnDeepBreathing);
         LinearLayout btnSetting = (LinearLayout) findViewById(R.id.btnSetting);
-        LinearLayout btnScoreboard = (LinearLayout) findViewById(R.id.btnScoreboard);
+        LinearLayout btnscoreboard = (LinearLayout) findViewById(R.id.btnScoreboard);
         LinearLayout btnInstruction = (LinearLayout) findViewById(R.id.btnInstruction);
 
         btnSquaredBreathing.setOnClickListener(menuOnClickListener);
         btnDeepBreathing.setOnClickListener(menuOnClickListener);
         btnSetting.setOnClickListener(menuOnClickListener);
-        btnScoreboard.setOnClickListener(menuOnClickListener);
+        btnscoreboard.setOnClickListener(menuOnClickListener);
         btnInstruction.setOnClickListener(menuOnClickListener);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 
     }
 

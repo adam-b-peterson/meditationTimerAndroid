@@ -9,15 +9,12 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import com.example.android.replicatecountdowntimer.BaseActivity;
 import com.example.android.replicatecountdowntimer.R;
 
 public class SquaredBreathingSettingActivity extends BaseActivity {
-    private NumberPicker npTotalDuration;
-    private NumberPicker npPartLength;
     private CheckBox cbShowTimePassed;
     private CheckBox cbShowTimeLeft;
     private CheckBox cbShowInstructions;
@@ -143,12 +140,12 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
         condition = getIntent().getStringExtra("condition");
 
         if (condition.equals("square")) {
-            tvDescriptionOfLength.setText("Length of Square: (4-15 seconds)");
-            tvHintOfLength.setText("Please choose between 4-15 seconds");
+            tvDescriptionOfLength.setText(R.string.description_of_length_square);
+            tvHintOfLength.setText(R.string.hint_of_length_square);
             maxTotalLength = 15;
         } else if (condition.equals("deep")) {
-            tvDescriptionOfLength.setText("Length of Exhale: (4-30 seconds)");
-            tvHintOfLength.setText("Please choose between 4-30 seconds");
+            tvDescriptionOfLength.setText(R.string.description_of_length_deep);
+            tvHintOfLength.setText(R.string.hint_of_length_deep);
             maxTotalLength = 30;
         }
 

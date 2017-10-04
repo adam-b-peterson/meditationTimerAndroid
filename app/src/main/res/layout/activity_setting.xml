@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context="com.example.android.replicatecountdowntimer.Setting.SettingActivity">
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <!--CURRENT TODO: add language listview with Language, smaller letter current language, then click and insert fragment to choose between languages-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Coming Soon!"
+        android:text="@string/setting_text"
         android:gravity="center_vertical"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textColor="@color/colorPrimary"
         />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

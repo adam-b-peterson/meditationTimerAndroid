@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,21 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Instructions"
+        android:text="@string/instructions"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="    Breathing practices are helpful formal practices in mindfulness meditation. Mindfulness meditation enhance emotional awareness, sense of peacefulness and live our lives in here and now.\n    "/>
+        android:text="@string/instructions_content"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Credits"
+        android:text="@string/credits"
         android:textAlignment="center"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="web"
-        android:text="Icon made by https://smashicons.com/, http://swifticons.com/, http://www.freepik.com/ from www.flaticon.com"/>
+        android:text="@string/credits_content"/>
 </LinearLayout>

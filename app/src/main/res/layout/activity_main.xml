@@ -30,7 +30,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_square_arrows"
-                android:contentDescription="squared breathing icon"
+                android:contentDescription="@string/squared_breathing_icon"
                 />
 
             <TextView
@@ -201,7 +201,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:text="Instructions/ Credits"
+                android:text="@string/instructions_credits"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/text_size_24dp" />

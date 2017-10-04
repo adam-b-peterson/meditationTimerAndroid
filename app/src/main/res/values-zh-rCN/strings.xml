@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name">放松 呼吸练习</string>
+        <string name="title_activity_main_page_fragment">主页分段</string>
+        <string name="action_settings">设置</string>
+        <string name="btn_squared_breathing">方形呼吸</string>
+        <string name="btn_deep_breathing">深呼吸</string>
+        <string name="btn_setting">设置</string>
+        <string name="btn_scoreboard">进展</string>
+        <string name="title_activity_squared_breathing_timer">方形呼吸计时</string>
+        <string name="title_activity_sqaured_breathing_setting">方形呼吸设定</string>
+        <string name="instructions">指示</string>
+        <string name="instructions_content">呼吸练习有助我们培养静观的态度，提升觉察的能力，放松身心，専注于此时此刻。 </string>
+        <string name="credits_content">图标由 https://smashicons.com/, http://swifticons.com/, http://www.freepik.com/ from www.flaticon.com 制作</string>
+        <string name="squared_breathing_icon">方形呼吸图标</string>
+        <string name="description_of_length_square">每段长度 (4 - 15 秒)</string>
+        <string name="hint_of_length_square">请选择 4 - 15 秒之间</string>
+        <string name="description_of_length_deep">呼气长度 (4 - 30 秒)</string>
+        <string name="hint_of_length_deep">请选择 4 - 30 秒之间</string>
+        <string name="finish_text">你已完成此次练习，你的总共练习时间：（分钟）</string>
+        <string name="instruction_inhale">吸</string>
+        <string name="instructions_credits">指示／鸣谢</string>
+        <string name="setting_text">即将推出！ </string>
+        <string name="squared_breathing_duration_hint">请选择 1 - 600 分钟之间</string>
+        <string name="squared_breathing_inhale_exhale_length_seconds">吸／呼气长度（秒）</string>
+        <string name="squared_breathing_length_hint">请选择 4 - 15 秒之间</string>
+        <string name="cb_show_time_passed">显示已渡过时间</string>
+        <string name="cb_show_time_left">显示余下时间</string>
+        <string name="cb_show_instructions">显示指示</string>
+        <string name="cb_vibrate">震动</string>
+        <string name="squared_breathing_start">开始</string>
+        <string name="timer_time_left">余下时间：</string>
+        <string name="instruction_exhale">呼</string>
+        <string name="instruction_hold">定</string>
+        <string name="total_practice_duration">总共练习时间</string>
+        <string name="scoreboard_text">额外功能即将推出！ </string>
+        <string name="squared_breathing_duration_mins">练习长度 （1 - 600 分钟）</string>
+        <string name="timer_time_passed">已渡过：</string>
+        <string name="credits">鸣谢</string>
+    <string name="Deep_In">吸</string>
+    <string name="Deep_Out">呼</string>
+</resources>

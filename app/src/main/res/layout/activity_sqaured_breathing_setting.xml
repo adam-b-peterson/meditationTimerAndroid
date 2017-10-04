@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<LinearLayout android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Duration (mins):"
+        android:text="@string/squared_breathing_duration_mins"
         android:textSize="20dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
@@ -23,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvHintOfDuration"
-        android:text="Please choose between 1-600 minutes"
+        android:text="@string/squared_breathing_duration_hint"
         android:textColor="@android:color/transparent"
         android:textAlignment="center"
         />
@@ -107,7 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Inhale/ Exhale Length (seconds):"
+        android:text="@string/squared_breathing_inhale_exhale_length_seconds"
         android:textSize="20dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
@@ -117,7 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvHintOfLength"
-        android:text="Please choose between 4-15 seconds"
+        android:text="@string/squared_breathing_length_hint"
         android:textColor="@android:color/transparent"
         android:textAlignment="center"
         />
@@ -186,7 +184,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Show Time Passed"
+        android:text="@string/cb_show_time_passed"
         android:layout_marginLeft="100dp"
         />
 
@@ -195,7 +193,7 @@
         android:id="@+id/cbShowTimeLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Time Left"
+        android:text="@string/cb_show_time_left"
         android:layout_marginLeft="100dp"
         />
 
@@ -204,7 +202,7 @@
         android:id="@+id/cbShowInstructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Instructions"
+        android:text="@string/cb_show_instructions"
         android:layout_marginLeft="100dp"
         />
 
@@ -213,7 +211,7 @@
         android:id="@+id/cbCheckVibrate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vibrate"
+        android:text="@string/cb_vibrate"
         android:layout_marginLeft="100dp"
         />
 
@@ -225,7 +223,7 @@
         android:padding="10dp"
         android:background="#f4bc42"
         android:textColor="#000000"
-        android:text="Start"
+        android:text="@string/squared_breathing_start"
         android:textStyle="bold"
         android:textAllCaps="true"
         android:layout_gravity="center"
