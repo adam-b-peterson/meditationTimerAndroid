@@ -20,18 +20,14 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
     private CheckBox cbShowInstructions;
     private CheckBox cbCheckVibrate;
 
-    /**
-     * duration views
-     */
+    // duration views
     private TextView btnDuration3mins;
     private TextView btnDuration5mins;
     private TextView btnDuration10mins;
     private TextView btnDuration20mins;
     private TextView btnDuration30mins;
 
-    /**
-     * length views
-     */
+    // length views
     private TextView btnLength4secs;
     private TextView btnLength5secs;
     private TextView btnLength6secs;
@@ -63,14 +59,10 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
 
         etDurationCurrent.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -98,14 +90,10 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
 
         etLengthCurrent.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -148,7 +136,6 @@ public class SquaredBreathingSettingActivity extends BaseActivity {
             tvHintOfLength.setText(R.string.hint_of_length_deep);
             maxTotalLength = 30;
         }
-
     }
 
     private void SquaredBreathingSettingBindViewAndOnClick() {

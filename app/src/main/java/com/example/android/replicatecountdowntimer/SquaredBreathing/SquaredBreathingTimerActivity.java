@@ -92,7 +92,6 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
     }
 
     private void vibrateReminder() {
-//        if ((isVisible) && (CheckVibrate)) {
         if (CheckVibrate) {
             vibrator.vibrate(500);
         }
@@ -247,8 +246,8 @@ public class SquaredBreathingTimerActivity extends BaseActivity {
 
 
 //                !!! changed  to 1 when fast feedback while testing
-//                if (progress <= totalDuration * 60) {
-                if (progress <= totalDuration*1) {
+                if (progress <= totalDuration * 60) {
+//                if (progress <= totalDuration*1) {
                     handler.postDelayed(this, 1000);
                 } else {
                     handler.removeCallbacks(runnable);

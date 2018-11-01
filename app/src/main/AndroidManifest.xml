@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.replicatecountdowntimer">
 
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/ic_lotus"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +21,14 @@
         </activity>
         <activity
             android:name=".SquaredBreathing.SquaredBreathingTimerActivity"
-            android:label="@string/title_activity_squared_breathing_timer"></activity>
+            android:label="@string/title_activity_squared_breathing_timer" />
         <activity
             android:name=".SquaredBreathing.SquaredBreathingSettingActivity"
-            android:label="@string/title_activity_sqaured_breathing_setting"></activity>
+            android:label="@string/title_activity_sqaured_breathing_setting" />
         <activity android:name=".Setting.SettingActivity" />
         <activity android:name=".Scoreboard.ScoreboardActivity" />
-        <activity android:name=".InstructionActivity"></activity>
+        <activity android:name=".InstructionActivity" />
+        <activity android:name=".Alarm.TimePickerFragment"></activity>
     </application>
 
 </manifest>
