@@ -1,109 +1,180 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/vg_fragment_main_page"
-    android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        app:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
-        card_view:contentPaddingLeft="-5dp"
-        card_view:contentPaddingTop="-5dp">
-        <LinearLayout
-            android:id="@+id/btnSquaredBreathing"
-            android:layout_height="match_parent"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_meditation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="background image" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/tools"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/vg_fragment_main_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--android:background="@drawable/image_meditation"-->
+
+
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:background="#ff9800"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_square_arrows"
-                android:contentDescription="@string/squared_breathing_icon"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="2"
-                android:background="#ff9800"
-                android:gravity="center"
-                android:text="@string/btn_squared_breathing"
-                android:textColor="#73A64E"
-                android:textAlignment="center"
-                android:textSize="@dimen/text_size_24dp"
-                />
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        app:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
-        card_view:contentPaddingLeft="-5dp"
-        card_view:contentPaddingTop="-5dp">
-
-        <LinearLayout
-                android:id="@+id/btnDeepBreathing"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            app:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPaddingLeft="-5dp"
+            card_view:contentPaddingTop="-5dp"
+            card_view:cardBackgroundColor="#51000000">
+            <LinearLayout
+                android:id="@+id/btnSquaredBreathing"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
-                android:background="#2196f3"
-                android:gravity="center" >
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="80dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_breath"
-                android:contentDescription="deep breathing icon"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:gravity="center"
-                android:text="@string/btn_deep_breathing"
-                android:textAlignment="center"
-                android:textColor="#FFDA44"
-                android:textSize="@dimen/text_size_24dp" />
+                android:orientation="horizontal">
+
+                <!--android:background="#ff9800"-->
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_square_arrows"
+                    android:contentDescription="@string/squared_breathing_icon"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:text="@string/btn_squared_breathing"
+                    android:textAlignment="center"
+                    android:textColor="@color/activity_main_font_color"
+                    android:textSize="@dimen/text_size_24sp" />
+                <!--android:background="#ff9800"-->
 
             </LinearLayout>
-    </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
-        card_view:contentPaddingLeft="-5dp"
-        card_view:contentPaddingTop="-5dp">
-        <LinearLayout
-            android:id="@+id/btnSetting"
-            android:layout_height="match_parent"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:background="#12BFB4"
-            android:gravity="center" >
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            app:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPaddingLeft="-5dp"
+            card_view:contentPaddingTop="-5dp"
+            card_view:cardBackgroundColor="#51000000"
+            >
+
+            <LinearLayout
+                    android:id="@+id/btnDeepBreathing"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="#512196f3"
+                    android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_breath"
+                    android:contentDescription="deep breathing icon"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/btn_deep_breathing"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="@dimen/text_size_24sp" />
+
+                </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPaddingLeft="-5dp"
+            card_view:contentPaddingTop="-5dp"
+            card_view:cardBackgroundColor="#51000000"
+            >
+            <LinearLayout
+                android:id="@+id/btnSetting"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:background="#5112BFB4"
+                android:gravity="center" >
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_setting"
+                        android:contentDescription="setting icon"
+                        />
+
+                    <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/btn_setting"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_24sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPaddingLeft="-5dp"
+            card_view:contentPaddingTop="-5dp"
+            card_view:cardBackgroundColor="#51000000"
+            >
+
+            <LinearLayout
+                android:id="@+id/btnScoreboard"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:background="#5112BFB4"
+                android:gravity="center" >
 
                 <ImageView
                     android:layout_width="0dp"
@@ -111,101 +182,65 @@
                     android:layout_height="30dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_setting"
-                    android:contentDescription="setting icon"
+                    android:src="@drawable/ic_scoreboard"
+                    android:contentDescription="scoreboard icon"
                     />
 
                 <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:text="@string/btn_setting"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/text_size_24dp" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/btn_scoreboard"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_24sp" />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
-        card_view:contentPaddingLeft="-5dp"
-        card_view:contentPaddingTop="-5dp">
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        <LinearLayout
-            android:id="@+id/btnScoreboard"
-            android:layout_height="match_parent"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:background="#12BFB4"
-            android:gravity="center" >
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="30dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_scoreboard"
-                android:contentDescription="scoreboard icon"
-                />
-
-            <TextView
-                android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardPreventCornerOverlap="false"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPaddingLeft="-5dp"
+            card_view:contentPaddingTop="-5dp"
+            card_view:cardBackgroundColor="#51000000"
+            >
+            <LinearLayout
+                android:id="@+id/btnInstruction"
                 android:layout_height="match_parent"
+                android:layout_width="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:text="@string/btn_scoreboard"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/text_size_24dp" />
+                android:background="#5112BFB4"
+                android:gravity="center" >
 
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_instructions"
+                    android:contentDescription="instructions/credits icon"
+                    />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:cardPreventCornerOverlap="false"
-        card_view:cardUseCompatPadding="true"
-        card_view:contentPaddingLeft="-5dp"
-        card_view:contentPaddingTop="-5dp">
-        <LinearLayout
-            android:id="@+id/btnInstruction"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:background="#12BFB4"
-            android:gravity="center" >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/instructions_credits"
+                    android:textAlignment="center"
+                    android:textColor="@color/activity_main_font_color"
+                    android:textSize="@dimen/text_size_24sp" />
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="30dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_instructions"
-                android:contentDescription="instructions/credits icon"
-                />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:text="@string/instructions_credits"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/text_size_24dp" />
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
